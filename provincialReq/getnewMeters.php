@@ -2,7 +2,7 @@
 
 <?php 
 
-	send_file();
+/*	send_file();
 
 	// load file
 	$data = file_get_contents('newUpdate.json');
@@ -29,5 +29,24 @@ function send_file(){
 	fwrite($handle, $data);
 	fclose($handle);
 }
+*/
+
+	
+	if(isset($_GET['meter_id'])){
+
+		$meter_id = $_GET['meter_id'];
+		$client_id = $_GET['client_id'];
+		$password = $_GET['password'];
+
+		//$query = "INSERT INTO disconnect_tb(meter_id,lost_time) VALUES ('{$meter_id}',NOW())";
+		$query = "INSERT INTO meter_tb(meter_id,client_id,password) VALUES ('{$meter_id}','{$client_id}','{$password}')";
+
+		mysqli_query($connection_pro,$query);
+		header("Location:../Admin_search/admin_search.php");
+	}
+	else{
+		//echo $query;
+		echo "erro";
+	}
 
  ?>

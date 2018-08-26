@@ -47,7 +47,7 @@
 			}
 
 			//echo $file;
-			header("Location:log_out.php");
+			header("Location:log_out.php?fileName=$file");
 		}
 	}
 

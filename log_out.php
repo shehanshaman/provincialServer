@@ -11,6 +11,8 @@
 
 	session_destroy();
 
-	header("Location: finish.php");
+	$fileName = $_GET['fileName'];
+
+	header("Location: finish.php?fileName=$fileName");
 
  ?>
